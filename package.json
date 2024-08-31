@@ -20,6 +20,8 @@
    "engines": {
       "node": ">=14.0.0"
    },
-   "dependencies": {},
+   "dependencies": {
+      "metablog-free": "file:"
+   },
    "packageManager": "pnpm@7.29.1"
 }
