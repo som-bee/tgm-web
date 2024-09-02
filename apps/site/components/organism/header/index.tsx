@@ -14,6 +14,7 @@ import MobileNav from './MobileNav'
  */
 const Header = () => {
    const { theme, setTheme, themes, hydrationError } = useMode()
+   
 
    const [sidebarOpen, setSidebarOpen] = React.useState<boolean>(false)
 
@@ -21,9 +22,15 @@ const Header = () => {
       <header className="py-5">
          <div className="container mx-auto font-work">
             <div className="navbar grid grid-cols-12">
-               <div className="col-span-3">
+               {/* <div className="col-span-3">
                   <Link href={`/`}>
                      <Logo className={`text-base-content`} />
+                  </Link>
+               </div> */}
+               <div className="col-span-3 flex items-center">
+                  <Link href={`/`} className="flex items-center">
+                     <img src="./logo.png" alt="Green Mates Logo" className="h-12 w-auto mr-0 mb-4" />
+                     <span className="text-base-content text-xl font-semibold">Green Mates</span>
                   </Link>
                </div>
                <nav className="hidden xl:block col-span-6">
@@ -74,23 +81,22 @@ const Header = () => {
                      </div>
                   </div>
                   {/* Theme Switcher */}
-                  {/*<input*/}
-                  {/*   type="checkbox"*/}
-                  {/*   className={`toggle rounded-full ${*/}
-                  {/*      !lightMode ? 'toggle-primary' : ''*/}
-                  {/*   }`}*/}
-                  {/*   onClick={() => {*/}
-                  {/*      if (theme === 'light') {*/}
-                  {/*         setTheme('dark')*/}
-                  {/*      } else {*/}
-                  {/*         setTheme('light')*/}
-                  {/*      }*/}
-                  {/*   }}*/}
-                  {/*   defaultChecked={theme === 'dark'}*/}
-                  {/*/>*/}
+                  {/* <input
+                     type="checkbox"
+                     className={`toggle rounded-full ${!lightMode ? 'toggle-primary' : ''}`}
+                     onClick={() => {
+                        if (theme === 'light') {
+                           setTheme('dark');
+                        } else {
+                           setTheme('light');
+                        }
+                     }}
+                     defaultChecked={theme === 'dark'}
+                  /> */}
+
 
                   {/*Multi themes switcher */}
-                  <div className="flex-none">
+                  {/* <div className="flex-none">
                      <div className="dropdown dropdown-end">
                         <label
                            tabIndex={0}
@@ -149,7 +155,7 @@ const Header = () => {
                            ))}
                         </ul>
                      </div>
-                  </div>
+                  </div> */}
 
                   {/* Responsive Sidebar Menu */}
                   <svg
